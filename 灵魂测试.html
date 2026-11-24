@@ -1,0 +1,886 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px '.AppleSystemUIFontMonospaced'; color: #0d1013; -webkit-text-stroke: #0d1013}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px '.AppleSystemUIFontMonospaced'; color: #0d1013; -webkit-text-stroke: #0d1013; background-color: #ffffff}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px '.AppleSystemUIFontMonospaced'; color: #0d1013; -webkit-text-stroke: #0d1013; min-height: 18.0px}
+    span.s1 {font-kerning: none; background-color: #ffffff}
+    span.s2 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="zh-CN"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;title&gt;测测你的灵魂对应哪位中国历史人物&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1">&lt;style&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&amp;family=Ma+Shan+Zheng&amp;display=swap');</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>:root {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>--bg: #0f0a0a;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>--card: #1a1212;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>--primary: #9b1b1b;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>--gold: #d4af37;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>--gold-light: #f0d78c;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>--text: #f5e8c7;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>--text-dim: #c9b896;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>--border: #4a2c2c;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>* {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>box-sizing: border-box;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>-webkit-tap-highlight-color: transparent;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>body {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-family: 'Noto Serif SC', serif;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background: var(--bg);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color: var(--text);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>min-height: 100vh;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>display: flex;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>justify-content: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>align-items: flex-start;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding: 20px 16px 40px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>line-height: 1.6;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.container {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>width: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>max-width: 640px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background: var(--card);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border: 1px solid var(--border);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border-radius: 20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>overflow: hidden;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>box-shadow: 0 0 60px rgba(155, 27, 27, 0.15), 0 0 0 1px rgba(212, 175, 55, 0.1);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>position: relative;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>/* 顶部装饰线 */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.container::before {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>content: '';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>position: absolute;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>top: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>left: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>right: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>height: 4px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background: linear-gradient(90deg, transparent, var(--gold), transparent);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>/* ========== 首页 ========== */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#home {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding: 50px 28px 40px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>text-align: center;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.title {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-family: 'Ma Shan Zheng', cursive;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-size: 2.1rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color: var(--gold);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>letter-spacing: 3px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin-bottom: 12px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>line-height: 1.3;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.subtitle {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-size: 0.95rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color: var(--text-dim);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin-bottom: 36px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.desc-box {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background: rgba(155, 27, 27, 0.15);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border: 1px solid var(--border);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border-radius: 12px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding: 18px 16px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-size: 0.92rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color: var(--text-dim);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin-bottom: 36px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>text-align: left;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.desc-box p {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin-bottom: 8px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.desc-box p:last-child {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin-bottom: 0;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>/* ========== 按钮 ========== */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.btn {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>display: block;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>width: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding: 16px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background: linear-gradient(135deg, #9b1b1b, #7a1515);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color: var(--gold-light);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border: 1px solid var(--gold);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border-radius: 12px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-size: 1.1rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-family: inherit;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-weight: 600;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>cursor: pointer;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>transition: all 0.3s ease;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>letter-spacing: 2px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.btn:hover, .btn:active {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background: linear-gradient(135deg, #b22222, #9b1b1b);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>transform: translateY(-1px);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.btn:disabled {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>opacity: 0.45;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>cursor: not-allowed;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>transform: none;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>box-shadow: none;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>/* ========== 答题页 ========== */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#quiz {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>display: none;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding: 28px 22px 32px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.progress-wrap {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin-bottom: 28px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.progress-text {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>display: flex;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>justify-content: space-between;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-size: 0.85rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color: var(--text-dim);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin-bottom: 8px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.progress-bar {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>height: 6px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background: #2a1a1a;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border-radius: 3px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>overflow: hidden;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.progress-fill {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>height: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background: linear-gradient(90deg, var(--primary), var(--gold));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>width: 0%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>transition: width 0.4s ease;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border-radius: 3px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.question-text {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-size: 1.18rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-weight: 600;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin-bottom: 24px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color: var(--text);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>line-height: 1.5;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.options {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>display: flex;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>flex-direction: column;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>gap: 12px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.option {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background: rgba(155, 27, 27, 0.12);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border: 1px solid var(--border);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border-radius: 12px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding: 16px 18px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>cursor: pointer;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>transition: all 0.25s ease;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-size: 1rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>position: relative;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.option:hover {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border-color: var(--gold);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background: rgba(155, 27, 27, 0.22);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>transform: translateX(4px);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.option.selected {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border-color: var(--gold);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background: rgba(212, 175, 55, 0.15);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>box-shadow: 0 0 0 1px var(--gold);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.option.selected::after {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>content: '✓';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>position: absolute;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>right: 16px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>top: 50%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>transform: translateY(-50%);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color: var(--gold);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-weight: bold;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.nav-btns {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>display: flex;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>gap: 12px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin-top: 28px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.nav-btns .btn {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>flex: 1;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.btn-secondary {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background: transparent;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border: 1px solid var(--border);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color: var(--text-dim);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.btn-secondary:hover {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border-color: var(--gold);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color: var(--gold);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background: rgba(212, 175, 55, 0.08);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>/* ========== 结果页 ========== */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#result {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>display: none;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding: 36px 24px 40px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>text-align: center;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.result-label {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-size: 0.9rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color: var(--text-dim);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>letter-spacing: 2px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin-bottom: 8px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.char-name {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-family: 'Ma Shan Zheng', cursive;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-size: 2.6rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color: var(--gold);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin: 8px 0 6px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>text-shadow: 0 0 30px rgba(212, 175, 55, 0.25);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.char-category {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>display: inline-block;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background: rgba(212, 175, 55, 0.15);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border: 1px solid var(--gold);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color: var(--gold);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding: 4px 16px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border-radius: 20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-size: 0.9rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin-bottom: 22px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.slogan {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-size: 1.15rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color: var(--gold-light);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-style: italic;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin-bottom: 28px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding: 0 10px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>line-height: 1.5;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.section {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background: rgba(155, 27, 27, 0.12);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border: 1px solid var(--border);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border-radius: 14px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding: 18px 16px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin-bottom: 16px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>text-align: left;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.section-title {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-size: 0.95rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color: var(--gold);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin-bottom: 10px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-weight: 600;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>display: flex;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>align-items: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>gap: 6px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.section-title::before {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>content: '';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>display: inline-block;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>width: 4px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>height: 14px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background: var(--gold);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border-radius: 2px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.section p {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-size: 0.95rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color: var(--text);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>line-height: 1.7;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.traits {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>display: flex;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>flex-wrap: wrap;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>gap: 8px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin-top: 6px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.trait {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background: rgba(212, 175, 55, 0.12);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border: 1px solid rgba(212, 175, 55, 0.4);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color: var(--gold-light);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding: 5px 12px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border-radius: 16px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-size: 0.85rem;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.easter {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background: linear-gradient(135deg, rgba(155, 27, 27, 0.25), rgba(212, 175, 55, 0.1));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border-color: var(--gold);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.share-tip {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-size: 0.85rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color: var(--text-dim);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin: 24px 0 16px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>/* 动画 */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.fade-in {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>animation: fadeIn 0.45s ease;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>@keyframes fadeIn {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>from { opacity: 0; transform: translateY(12px); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>to { opacity: 1; transform: translateY(0); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>/* 移动端优化 */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>@media (max-width: 480px) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.title { font-size: 1.75rem; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.char-name { font-size: 2.2rem; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>#home { padding: 40px 20px 32px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>#quiz, #result { padding: 24px 16px 28px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.question-text { font-size: 1.1rem; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1">&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="container"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- 首页 --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="home" class="fade-in"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;h1 class="title"&gt;测测你的灵魂&lt;br&gt;对应哪位中国历史人物&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;p class="subtitle"&gt;40道生活题 · 揭开你灵魂深处的历史回响&lt;/p&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="desc-box"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p&gt;· 不问历史知识，只看你的日常习惯与处事方式&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p&gt;· 匹配谋士 / 帝王 / 文人 / 侠客 / 诗人 / 将领 / 隐士&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p&gt;· 结果含性格解析、隐藏优势与趣味彩蛋&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p&gt;· 纯本地运行，数据不上传&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;button class="btn" onclick="startQuiz()"&gt;开启灵魂测试&lt;/button&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- 答题页 --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="quiz"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="progress-wrap"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="progress-text"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;span&gt;第 &lt;span id="currentNum"&gt;1&lt;/span&gt; / 40 题&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;span id="progressPercent"&gt;0%&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="progress-bar"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="progress-fill" id="progressFill"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div id="questionArea" class="fade-in"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="question-text" id="qText"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="options" id="options"&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="nav-btns"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-secondary" id="prevBtn" onclick="prevQuestion()" style="display:none;"&gt;上一题&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button class="btn" id="nextBtn" onclick="nextQuestion()" disabled&gt;下一题&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- 结果页 --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="result"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;p class="result-label"&gt;你的灵魂对应历史人物&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="char-name" id="resName"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="char-category" id="resCategory"&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;p class="slogan" id="resSlogan"&gt;&lt;/p&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="section"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="section-title"&gt;性格特征&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="traits" id="resTraits"&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="section"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="section-title"&gt;匹配理由&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p id="resReason"&gt;&lt;/p&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="section"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="section-title"&gt;隐藏优势&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p id="resAdvantage"&gt;&lt;/p&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="section easter"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="section-title"&gt;趣味彩蛋&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p id="resEaster"&gt;&lt;/p&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;p class="share-tip"&gt;长按或截图保存，分享到朋友圈 / 小红书&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;button class="btn" onclick="restart()"&gt;再测一次&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1">&lt;script&gt;</span></p>
+<p class="p1"><span class="s1">// ===================== 历史人物数据 =====================</span></p>
+<p class="p1"><span class="s1">const characters = {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>zhuge: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>name: "诸葛亮",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>category: "谋士",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>slogan: "运筹帷幄之中，决胜千里之外。",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>traits: ["深谋远虑", "沉稳理性", "忠于理想", "全局思维"],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>reason: "你习惯在行动前把事情想清楚，注重逻辑与准备。面对复杂局面，你更愿意用智慧而非蛮力解决。你重承诺，一旦认定方向就会长期坚持。",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>advantage: "在团队中你是天然的军师型人物，能把混乱理出头绪，让别人少走很多弯路。",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>easter: "如果生活是一盘棋，你早已把后十步都想好了，只是有时候走得太稳，反而错过了偶尔的惊喜。"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>qin: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>name: "秦始皇",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>category: "帝王",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>slogan: "天下事，当以我之手定之。",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>traits: ["目标明确", "强势果决", "效率至上", "掌控欲强"],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>reason: "你做事喜欢抓住核心，追求结果与效率。你不喜欢拖延和模糊地带，宁可自己定规则，也不愿被规则限制。你有强烈的成就欲与主导欲。",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>advantage: "关键时刻你能迅速决策并推动落地，是天生的开创者与整合者。",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>easter: "你内心住着一个想统一六国的人，只是现代社会没有长城和兵马俑可以修，所以你把野心藏在了每一次认真做事里。"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>sushi: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>name: "苏轼",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>category: "文人",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>slogan: "一蓑烟雨任平生。",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>traits: ["豁达通透", "多才多艺", "人情练达", "乐观坚韧"],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>reason: "你能把生活过成诗，也能在挫折中找到新的乐趣。你既有文人的细腻，也有入世的智慧，善于调节自己的情绪与人际关系。",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>advantage: "无论顺境逆境，你都能保持内心的弹性和温度，是朋友圈里最让人安心的存在。",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>easter: "你大概是那个即使被贬到天涯海角，也能立刻开始研究当地美食并写诗的人。"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>jingke: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>name: "荆轲",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>category: "侠客",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>slogan: "风萧萧兮易水寒，壮士一去兮不复还。",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>traits: ["重情重义", "敢作敢当", "行动力强", "血性真诚"],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>reason: "你做事讲义气，认定的人或事会全力以赴。你不喜欢拐弯抹角，宁可正面硬刚也不愿背后算计。关键时刻你愿意站出来。",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>advantage: "你是朋友真正需要时靠得住的人，有一种稀缺的“说到做到”的魄力。",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>easter: "你的灵魂里还留着易水边的那股寒风，所以偶尔会突然想为某个信念赌一把。"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>libai: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>name: "李白",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>category: "诗人",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>slogan: "仰天大笑出门去，我辈岂是蓬蒿人。",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>traits: ["浪漫不羁", "自由至上", "灵感充沛", "率真洒脱"],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>reason: "你讨厌被束缚，追求感觉与自由。你对美的事物敏感，情绪来得快去得也快，活得相对真实。你更愿意跟随内心而非世俗标准。",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>advantage: "你能为平凡生活注入诗意与热情，是身边人眼中的“有趣灵魂”。",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>easter: "你大概是那个想把月亮摘下来当酒杯的人，现实虽然做不到，但想象力从不缺席。"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>yuefei: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>name: "岳飞",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>category: "将领",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>slogan: "三十功名尘与土，八千里路云和月。",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>traits: ["忠诚担当", "纪律严明", "家国情怀", "坚毅不屈"],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>reason: "你有强烈的责任感和原则感。做事认真，对自己和他人都有较高要求。你愿意为更大的目标付出，甚至牺牲短期利益。",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>advantage: "你是团队里最靠谱的执行者与守护者，关键时刻总能扛事。",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>easter: "你内心有一块“精忠报国”的牌坊，虽然时代不同了，但这份热血从未真正冷却。"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>taoyuan: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>name: "陶渊明",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>category: "隐士",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>slogan: "采菊东篱下，悠然见南山。",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>traits: ["淡泊宁静", "独立自在", "知足常乐", "远离喧嚣"],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>reason: "你更看重内心的平静与个人节奏，不喜欢过度竞争和社交消耗。你懂得给自己留白，追求简单而真实的生活状态。",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>advantage: "你拥有稀缺的“反内耗”能力，能在浮躁环境中守住自己的节奏与喜乐。",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>easter: "你灵魂深处住着一个只想种菊花的人，所以现代生活偶尔会让你觉得“这世上本没有那么多必须”。"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2">};</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1">// ===================== 40道题目 =====================</span></p>
+<p class="p1"><span class="s1">const questions = [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "周末早上没有安排时，你通常会？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "先规划一天要做什么，再开始行动", s: { zhuge: 2, yuefei: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "直接出门，走到哪算哪", s: { libai: 2, jingke: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "在家慢慢吃brunch，刷手机或看书", s: { sushi: 2, taoyuan: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "把积压的事情一口气处理完", s: { qin: 2, yuefei: 1 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "朋友突然取消约定，你的第一反应是？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "理解，重新调整自己的计划", s: { zhuge: 2, sushi: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "有点失落，但很快就过去了", s: { taoyuan: 2, sushi: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "直接问原因，想把事情说清楚", s: { jingke: 2, yuefei: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "内心有点不爽，但表面无所谓", s: { qin: 1, libai: 1 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "项目遇到瓶颈时，你更倾向于？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "冷静分析问题根源，再制定方案", s: { zhuge: 3 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "召集大家一起头脑风暴", s: { sushi: 2, zhuge: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "先行动起来，边做边调整", s: { jingke: 2, libai: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "自己加班把关键部分啃下来", s: { yuefei: 2, qin: 1 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "你更喜欢哪种社交方式？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "小范围深度聊天", s: { zhuge: 1, taoyuan: 2, sushi: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "热闹的聚会，认识新朋友", s: { libai: 2, sushi: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "有共同目标的团队活动", s: { yuefei: 2, qin: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "能自己掌控节奏的一对一交流", s: { jingke: 1, qin: 1 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "看到不公平的事情，你会？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "先观察局势，再决定是否介入", s: { zhuge: 2 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "直接站出来表达立场", s: { jingke: 3, yuefei: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "在能力范围内默默帮助弱者", s: { yuefei: 2, sushi: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "觉得世事无常，尽量不让自己卷入", s: { taoyuan: 2 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "你选择工作/学习方向时，最看重？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "能否发挥自己的长期价值", s: { zhuge: 2, yuefei: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "是否有足够的自由度与创造空间", s: { libai: 2, taoyuan: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "能否快速看到成果与回报", s: { qin: 2 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "环境是否舒服、人际关系是否简单", s: { taoyuan: 2, sushi: 1 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "情绪低落时，你通常会？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "一个人待着，想清楚再出来", s: { taoyuan: 2, zhuge: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "找信任的人聊聊", s: { sushi: 2, yuefei: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "用运动或做事把情绪消耗掉", s: { jingke: 2, yuefei: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "看点有趣的、美的东西转移注意力", s: { libai: 2, sushi: 1 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "面对一个全新的挑战，你第一反应是？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "收集信息，评估可行性", s: { zhuge: 3 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "兴奋，想马上试试", s: { libai: 2, jingke: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "看看是否值得投入时间精力", s: { qin: 2, taoyuan: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "先做最基础的准备，再逐步推进", s: { yuefei: 2 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "你更欣赏哪种人？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "智慧过人、总能给出建设性意见的人", s: { zhuge: 3 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "敢爱敢恨、行事爽快的人", s: { jingke: 2, libai: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "有格局、能成大事的人", s: { qin: 3 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "活得自在、不被世俗绑架的人", s: { taoyuan: 2, libai: 1 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "旅行时你更倾向于？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "提前做好详细攻略", s: { zhuge: 2, yuefei: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "只定大方向，细节随机", s: { libai: 2, sushi: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "深度体验当地生活，少赶景点", s: { taoyuan: 2, sushi: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "高效打卡，把想看的都看完", s: { qin: 2 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "团队意见不合时，你通常扮演？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "分析利弊、提出折中方案的人", s: { zhuge: 3, sushi: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "坚持自己认为正确方向的人", s: { qin: 2, yuefei: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "缓和气氛、让大家冷静的人", s: { sushi: 2, taoyuan: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "用行动证明自己观点的人", s: { jingke: 2 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "你对“规则”的态度更接近？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "规则是用来优化和利用的", s: { zhuge: 2, qin: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "合理的规则应该被遵守", s: { yuefei: 2, sushi: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "必要时可以打破规则", s: { jingke: 2, libai: 1, qin: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "尽量避开需要复杂规则的环境", s: { taoyuan: 2 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "收到意外好消息时，你会？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "先确认真实性，再分享", s: { zhuge: 2 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "立刻想和重要的人分享喜悦", s: { sushi: 2, libai: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "暗自高兴，继续按原计划做事", s: { yuefei: 1, taoyuan: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "马上开始规划下一步更大的目标", s: { qin: 2 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "你更享受哪种成就感？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "把复杂问题彻底理顺", s: { zhuge: 3 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "完成一件别人觉得很难的事", s: { qin: 2, yuefei: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "创造出美的或有趣的事物", s: { libai: 2, sushi: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "帮助别人解决了实际困难", s: { yuefei: 2, jingke: 1 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "购物时你更可能？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "货比三家，理性决策", s: { zhuge: 2 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "看感觉，喜欢就买", s: { libai: 2 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "只买真正需要的东西", s: { taoyuan: 2, yuefei: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "买能提升效率或地位的东西", s: { qin: 2 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "与人发生冲突后，你倾向于？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "冷静复盘，思考更好的处理方式", s: { zhuge: 2, sushi: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "把话说开，尽快解决", s: { jingke: 2, yuefei: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "先让自己平静，再决定要不要继续纠缠", s: { taoyuan: 2 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "用结果证明自己是对的", s: { qin: 2 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "你理想中的生活节奏是？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "紧凑高效，每天都有明确目标", s: { qin: 2, yuefei: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "张弛有度，有忙有闲", s: { sushi: 2, zhuge: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "随性自由，不被时间表绑死", s: { libai: 2, taoyuan: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "稳定可预期，少有突然变化", s: { taoyuan: 2, yuefei: 1 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "看到别人成功时，你的内心更接近？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "分析对方做对了什么", s: { zhuge: 2, qin: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "真心替对方高兴", s: { sushi: 2 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "激发自己也要更努力的斗志", s: { yuefei: 2, qin: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "觉得每个人有自己的路，不必比较", s: { taoyuan: 2, libai: 1 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "你更喜欢的书籍/内容类型是？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "策略、历史、逻辑类", s: { zhuge: 2, qin: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "诗歌、小说、艺术类", s: { libai: 2, sushi: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "人物传记、励志故事", s: { yuefei: 2, jingke: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "生活哲学、自然、慢生活类", s: { taoyuan: 2 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "当计划被打乱时，你通常？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "迅速制定新的替代方案", s: { zhuge: 2, qin: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "接受现实，随机应变", s: { sushi: 2, libai: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "有些烦躁，但还是会调整", s: { yuefei: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "正好可以给自己放空一下", s: { taoyuan: 2 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "你在意别人对你的看法吗？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "在意有价值的人的评价", s: { zhuge: 1, yuefei: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "比较在意，会因此调整自己", s: { sushi: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "不太在意，按自己的标准来", s: { libai: 2, taoyuan: 1, jingke: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "在意结果是否被认可", s: { qin: 2 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "做决定时，你更依赖？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "逻辑分析与数据", s: { zhuge: 3 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "直觉与感觉", s: { libai: 2, jingke: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "过往经验和原则", s: { yuefei: 2, qin: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "当下的心情与状态", s: { taoyuan: 2, libai: 1 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "你更愿意把时间花在？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "提升自己的核心能力", s: { zhuge: 2, qin: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "体验新鲜有趣的事物", s: { libai: 2, sushi: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "维护重要的人际关系", s: { sushi: 2, yuefei: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "让自己感到放松和舒服", s: { taoyuan: 2 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "面对压力，你的表现更接近？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "越压越冷静，思维更清晰", s: { zhuge: 2, qin: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "会找出口释放，然后继续干", s: { jingke: 1, libai: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "咬牙坚持，把事情做完", s: { yuefei: 3 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "适当降低要求，保护自己", s: { taoyuan: 2, sushi: 1 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "你理想中的朋友是？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "能互相启发、一起进步的人", s: { zhuge: 2, sushi: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "性格合得来、一起玩得开心的人", s: { libai: 2, sushi: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "关键时刻能互相托付的人", s: { jingke: 2, yuefei: 2 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "互不打扰、偶尔交流也舒服的人", s: { taoyuan: 2 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "你对“成功”的定义更接近？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "做成有长期价值的事", s: { zhuge: 2, yuefei: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "实现自己设定的目标", s: { qin: 2 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "活得自在、无悔", s: { libai: 2, taoyuan: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "对身边的人有正面影响", s: { sushi: 2, yuefei: 1 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "学习新技能时，你更喜欢？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "系统学习，打好基础", s: { zhuge: 2, yuefei: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "先玩起来，感兴趣再深入", s: { libai: 2 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "找最有效的方法快速上手", s: { qin: 2 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "按自己的节奏慢慢来", s: { taoyuan: 2 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "你更讨厌哪种情况？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "事情没有计划和逻辑", s: { zhuge: 2 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "被强行安排、失去选择权", s: { libai: 2, taoyuan: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "不公平或推卸责任的行为", s: { yuefei: 2, jingke: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "效率低下、浪费时间", s: { qin: 2 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "夜晚独处时，你常会想？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "接下来的计划与目标", s: { zhuge: 1, qin: 2 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "一些有的没的浪漫或有趣念头", s: { libai: 2 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "最近的人和事，复盘自己", s: { sushi: 2, yuefei: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "什么都不想，单纯放松", s: { taoyuan: 2 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "你如何看待“坚持”？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "值得的事情就应该长期坚持", s: { yuefei: 2, zhuge: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "方向对了再坚持，否则及时止损", s: { qin: 2, zhuge: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "感兴趣就坚持，没感觉就换", s: { libai: 2 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "顺其自然，不必强求", s: { taoyuan: 2 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "你更倾向于用什么方式表达关心？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "帮对方分析和解决实际问题", s: { zhuge: 2 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "直接行动支持或陪伴", s: { jingke: 2, yuefei: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "说暖心的话或制造小惊喜", s: { sushi: 2, libai: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "默默留意，在对方需要时出现", s: { taoyuan: 1, yuefei: 1 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "面对未知风险，你的态度是？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "尽量把风险降到可控范围", s: { zhuge: 2 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "值得的话可以赌一把", s: { jingke: 2, libai: 1, qin: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "能避就避，安全第一", s: { taoyuan: 2 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "做好最坏打算，再全力推进", s: { yuefei: 2, qin: 1 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "你希望别人记住你的是？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "智慧与可靠", s: { zhuge: 3 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "真实与痛快", s: { jingke: 2, libai: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "成就与影响力", s: { qin: 2 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "温暖与有趣", s: { sushi: 2, libai: 1 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "你更喜欢的环境是？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "有挑战、能成长的环境", s: { qin: 1, yuefei: 2, zhuge: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "自由宽松、氛围轻松的环境", s: { libai: 2, taoyuan: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "有明确目标和秩序的环境", s: { yuefei: 2, qin: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "安静、少打扰的环境", s: { taoyuan: 2 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "当别人请你帮忙且你不太方便时？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "先评估自己是否真的能帮上忙", s: { zhuge: 2 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "能帮就帮，实在不行坦诚说明", s: { jingke: 1, sushi: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "优先保证自己的事情不受影响", s: { qin: 1, taoyuan: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "尽量挤时间帮忙，重情义", s: { yuefei: 2, jingke: 1 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "你对“改变”的态度是？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "主动设计自己想要的改变", s: { qin: 2, zhuge: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "接受变化，并尝试从中找到乐趣", s: { sushi: 2, libai: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "能稳定就尽量稳定", s: { taoyuan: 2, yuefei: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "该变的时候绝不犹豫", s: { jingke: 1, qin: 1 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "你更看重过程还是结果？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "结果导向，过程服务于结果", s: { qin: 3 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "过程有意义，结果是自然产物", s: { libai: 1, taoyuan: 1, sushi: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "两者都重要，但更不能接受烂尾", s: { yuefei: 2, zhuge: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "享受过程中的思考与成长", s: { zhuge: 2 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "你如何处理自己的小缺点？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "认真对待，制定改进计划", s: { yuefei: 2, zhuge: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "接受它是自己的一部分", s: { taoyuan: 2, libai: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "用其他优点来平衡", s: { sushi: 2 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "如果影响目标就改，不影响就放着", s: { qin: 2 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "你更喜欢哪种表达方式？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "精准、有条理的表达", s: { zhuge: 2 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "生动、有感染力的表达", s: { libai: 2, sushi: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "直接、不绕弯的表达", s: { jingke: 2, qin: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "温和、留有余地的表达", s: { sushi: 1, taoyuan: 1 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{ q: "最后一题：如果用一个词形容你希望的人生，你会选？", options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "通透", s: { zhuge: 2, sushi: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "痛快", s: { jingke: 2, libai: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "成就", s: { qin: 2, yuefei: 1 } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{ t: "自在", s: { taoyuan: 2, libai: 1 } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]}</span></p>
+<p class="p2"><span class="s2">];</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1">// ===================== 逻辑部分 =====================</span></p>
+<p class="p1"><span class="s1">let current = 0;</span></p>
+<p class="p1"><span class="s1">let scores = { zhuge:0, qin:0, sushi:0, jingke:0, libai:0, yuefei:0, taoyuan:0 };</span></p>
+<p class="p2"><span class="s2">let answers = new Array(40).fill(null);</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1">function startQuiz() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.getElementById('home').style.display = 'none';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.getElementById('quiz').style.display = 'block';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>current = 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>scores = { zhuge:0, qin:0, sushi:0, jingke:0, libai:0, yuefei:0, taoyuan:0 };</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>answers = new Array(40).fill(null);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>showQuestion();</span></p>
+<p class="p2"><span class="s2">}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1">function showQuestion() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const q = questions[current];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.getElementById('qText').textContent = q.q;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.getElementById('currentNum').textContent = current + 1;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const percent = Math.round((current / 40) * 100);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.getElementById('progressPercent').textContent = percent + '%';</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>document.getElementById('progressFill').style.width = percent + '%';</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const optionsEl = document.getElementById('options');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>optionsEl.innerHTML = '';</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">  </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>q.options.forEach((opt, idx) =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const div = document.createElement('div');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>div.className = 'option' + (answers[current] === idx ? ' selected' : '');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>div.textContent = opt.t;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>div.onclick = () =&gt; selectOption(idx);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>optionsEl.appendChild(div);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>});</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.getElementById('prevBtn').style.display = current &gt; 0 ? 'block' : 'none';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.getElementById('nextBtn').disabled = answers[current] === null;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.getElementById('nextBtn').textContent = current === 39 ? '查看结果' : '下一题';</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">  </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>// 重新触发动画</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const area = document.getElementById('questionArea');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>area.classList.remove('fade-in');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>void area.offsetWidth;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>area.classList.add('fade-in');</span></p>
+<p class="p2"><span class="s2">}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1">function selectOption(idx) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>answers[current] = idx;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.querySelectorAll('.option').forEach((el, i) =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>el.classList.toggle('selected', i === idx);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.getElementById('nextBtn').disabled = false;</span></p>
+<p class="p2"><span class="s2">}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1">function nextQuestion() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if (answers[current] === null) return;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">  </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if (current &lt; 39) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>current++;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>showQuestion();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>calculateResult();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2">}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1">function prevQuestion() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if (current &gt; 0) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>current--;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>showQuestion();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2">}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1">function calculateResult() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>// 重新计算分数（支持修改答案）</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>scores = { zhuge:0, qin:0, sushi:0, jingke:0, libai:0, yuefei:0, taoyuan:0 };</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">  </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>answers.forEach((ansIdx, qIdx) =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if (ansIdx === null) return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const s = questions[qIdx].options[ansIdx].s;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>for (let key in s) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>scores[key] += s[key];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>});</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>// 找出最高分</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>let maxScore = -1;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>let resultKey = 'zhuge';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>for (let key in scores) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if (scores[key] &gt; maxScore) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>maxScore = scores[key];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>resultKey = key;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>showResult(resultKey);</span></p>
+<p class="p2"><span class="s2">}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1">function showResult(key) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const c = characters[key];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.getElementById('quiz').style.display = 'none';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.getElementById('result').style.display = 'block';</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>document.getElementById('result').classList.add('fade-in');</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.getElementById('resName').textContent = c.name;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.getElementById('resCategory').textContent = c.category;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.getElementById('resSlogan').textContent = '「' + c.slogan + '」';</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">  </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const traitsEl = document.getElementById('resTraits');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>traitsEl.innerHTML = '';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>c.traits.forEach(t =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const span = document.createElement('span');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>span.className = 'trait';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>span.textContent = t;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>traitsEl.appendChild(span);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>});</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.getElementById('resReason').textContent = c.reason;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.getElementById('resAdvantage').textContent = c.advantage;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.getElementById('resEaster').textContent = c.easter;</span></p>
+<p class="p2"><span class="s2">}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1">function restart() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.getElementById('result').style.display = 'none';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.getElementById('home').style.display = 'block';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.getElementById('home').classList.add('fade-in');</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p2"><span class="s2">&lt;/html&gt;</span></p>
+</body>
+</html>
